@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0px;
+}
+
+
+.logo{
+    text-align: center;
+    font-size: x-large;
+}
+.all-news{
+    background-color: black;
+    color:#EEEEEE;
+    /* min-height: 100vh; */
+    padding: 10px;
+    border-radius: 1px;
+}
+
+.news{
+    background-color: #053B50;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-around;
+    border-radius: 5px;
+    margin: 1%;
+    padding: 5px;
+
+}
+
+.news .news-img{
+    height: 350px;
+    width: 500px;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.news-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.headline{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #176B87;
+    max-width: max-content;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 1%;
+}
+.news-story{
+    /* display: flex; */
+    /* flex-direction: column; */
+    background-color: #176B87;
+    max-width: max-content;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 1%;
+}
+.news-story a {
+    background-color: #176B87;
+    display: flex;
+    float: inline-end;
+    /* justify-content: center; */
+    align-items:self-end;
+}
+.post-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.posted-by,.date-time{
+    background-color: rgb(9, 27, 20);
+    border-radius: 5px;
+    padding: 7px;
+}
