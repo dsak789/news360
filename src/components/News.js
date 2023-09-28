@@ -8,7 +8,7 @@ const News = () => {
   const [error, setError] = useState(null);
 
   const news_data = () => {
-    fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=194bc3ea605b48bf96cc64cab7eec7cb')
+    fetch('http://newsapi.org/v2/top-headlines?country=in&apiKey=194bc3ea605b48bf96cc64cab7eec7cb')
       .then((res) => {
         if (!res.ok) {
           throw new Error('Network response was not ok');
