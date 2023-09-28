@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './css/News.css'
+import Nav from './Nav'
 import {FaArrowRight,FaGithub,FaLinkedin} from 'react-icons/fa'
 
 const News = () => {
@@ -38,9 +39,7 @@ const News = () => {
         </div> */}
         <div>
             <div className='all-news'>
-                <div className='logo'>
-                    <h1>News 360<sup>o</sup> <sub>24/7</sub></h1>
-                </div>
+                <Nav/>
                 {ndata.map((info)=>(    
                     <div className='news'>
                         <div className='news-image'>

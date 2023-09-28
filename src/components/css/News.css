@@ -4,14 +4,14 @@
 }
 
 
-.logo{
+.logo-name{
     text-align: center;
     font-size: x-large;
 }
 .all-news{
     background-color: black;
     color:#EEEEEE;
-    /* min-height: 100vh; */
+    min-height: 100vh;
     padding: 10px;
     border-radius: 1px;
 }
