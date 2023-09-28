@@ -8,7 +8,8 @@ const News = () => {
   const [error, setError] = useState(null);
 
   const news_data = () => {
-    const api ='https://inshortsapi.vercel.app/news?category=all';
+    // const api ='https://inshortsapi.vercel.app/news?category=all';
+    const api ='https://newsapi.org/v2/everything?q=tesla&from=2023-08-28&sortBy=publishedAt&apiKey=194bc3ea605b48bf96cc64cab7eec7cb'
     fetch(api)
       .then((res) => {
         if (!res.ok) {
@@ -17,8 +18,8 @@ const News = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data.data);
-        setNdata(data.data);
+        console.log(data.articles);
+        setNdata(data.articles);
       })
       .catch((error) => {
         console.error('Error fetching news data:', error);
@@ -41,21 +42,21 @@ const News = () => {
             ndata.map((info) => (
               <div key={info.url} className='news'>
                 <div className='news-image'>
-                  <img className='news-img' height={250} width={250} src={info.imageUrl} alt='' />
+                  <img className='news-img' height={250} width={250} src={info.urlToImage} alt='' />
                 </div>
                 <div className='news-content'>
                   <div className='headline'>{info.title}</div>
                   <div className='news-story'>
+                    {info.description}
+                    <br />
                     {info.content}
-                    {/* <br /> */}
-                    {/* {info.content} */}
                     <a href={info.readMoreUrl} target='_blank' rel='noopener noreferrer'>
                       Readmore<FaArrowRight />
                     </a>
                   </div>
                   <div className='post-details'>
                     <div className='posted-by'>Post By: {info.author}</div>
-                    <div className='date-time'>Posted on: {info.date} {info.time}</div>
+                    <div className='date-time'>Posted on: {info.publishedAt}</div>
                   </div>
                 </div>
               </div>
