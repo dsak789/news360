@@ -13,7 +13,7 @@ const News = () => {
         fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=194bc3ea605b48bf96cc64cab7eec7cb')
         .then((res) => res.json())
         .then((data)=>{
-                console.log(data.data);
+                console.log(data.articles);
                 setNdata(data.articles);
             })
     }
@@ -30,7 +30,7 @@ const News = () => {
     useEffect(()=>{
         news_data()
     },[])
-
+    console.log(ndata)
   return (
     <div>
         {/* <div className='categories'>
@@ -41,12 +41,13 @@ const News = () => {
             <div className='all-news'>
                 <Nav/>
                 {ndata.map((info)=>(    
-                    <div className='news'>
+                    <div key={info.title} className='news'>
                         <div className='news-image'>
                             <img className='news-img' height={250} width={250} src={info.urlToImage} alt=''/>
                         </div>
                         <div className='news-content'>
                             <div className='headline'>
+
                                 {info.title}
                             </div>
                             <div className='news-story'>
