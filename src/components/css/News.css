@@ -76,3 +76,16 @@
     border-radius: 5px;
     padding: 7px;
 }
+
+.footer p{
+    margin: 0rem;
+}
+.footer .icons a{
+    margin-top: .5rem;
+    align-items: center;
+    text-align: center;
+    display: inline-flex;
+    color: whitesmoke;
+    font-size: 1rem;
+    text-decoration: none;
+}
