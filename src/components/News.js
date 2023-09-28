@@ -30,7 +30,7 @@ const News = () => {
     useEffect(()=>{
         news_data()
     },[])
-    console.log(ndata)
+    // console.log(ndata)
   return (
     <div>
         {/* <div className='categories'>
@@ -66,8 +66,8 @@ const News = () => {
                         </div>
                     </div>
                 ))}
-                <div class="footer" id="footer">
-                    <div class="icons">
+                <div className="footer" id="footer">
+                    <div className="icons">
                         <a href="https://github.com/sbcreations14378" ><FaGithub/></a>&nbsp;&nbsp;&nbsp;
                         <a href="https://www.linkedin.com/in/" ><FaLinkedin/> </a>
                     </div>
