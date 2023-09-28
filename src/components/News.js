@@ -9,7 +9,7 @@ const News = () => {
 
   const news_data = () => {
     // const api ='https://inshortsapi.vercel.app/news?category=all';
-    const api ='https://newsapi.org/v2/everything?q=tesla&from=2023-08-28&sortBy=publishedAt&apiKey=194bc3ea605b48bf96cc64cab7eec7cb'
+    const api ='https://newsapi.org/v2/everything?q=tesla&apiKey=194bc3ea605b48bf96cc64cab7eec7cb'
     fetch(api)
       .then((res) => {
         if (!res.ok) {
