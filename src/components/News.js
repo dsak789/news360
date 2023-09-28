@@ -2,29 +2,44 @@ import React, { useEffect, useState } from 'react';
 import './css/News.css';
 import Nav from './Nav';
 import { FaArrowRight, FaGithub, FaLinkedin } from 'react-icons/fa';
+import axios from 'axios';
 
 const News = () => {
   const [ndata, setNdata] = useState([]);
   const [error, setError] = useState(null);
 
-  const news_data = () => {
+  const news_data = async() => {
     // const api ='https://inshortsapi.vercel.app/news?category=all';
-    const api ='https://newsapi.org/v2/everything?q=tesla&apiKey=194bc3ea605b48bf96cc64cab7eec7cb'
-    fetch(api)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Network response was not ok');
+    // const api ='https://newsapi.org/v2/everything?q=tesla&apiKey=194bc3ea605b48bf96cc64cab7eec7cb'
+    // fetch(api)
+    //   .then((res) => {
+    //     if (!res.ok) {
+    //       throw new Error('Network response was not ok');
+    //     }
+    //     return res.json();
+    //   })
+    //   .then((data) => {
+    //     console.log(data.data);
+    //     setNdata(data.data);
+    //   })
+    //   .catch((error) => {
+    //     console.error('Error fetching news data:', error);
+    //     setError('Failed to fetch news data. Please try again later.');
+    //   });
+   try{
+        const response = await axios.get('http://localhost:1437/all')
+        
+        if(response){
+            // console.log("Local Api Feteched"+response.data)
+            const news=(response)    
+            // console.log(news.data)
+            setNdata(news.data)
         }
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data.articles);
-        setNdata(data.articles);
-      })
-      .catch((error) => {
-        console.error('Error fetching news data:', error);
-        setError('Failed to fetch news data. Please try again later.');
-      });
+   }
+   catch(error){
+        console.log(error);
+        setError(error)
+   }
   };
 
   useEffect(() => {
@@ -40,23 +55,23 @@ const News = () => {
             <div className='error-message'>{error}</div>
           ) : (
             ndata.map((info) => (
-              <div key={info.url} className='news'>
+              <div key={info.title} className='news'>
                 <div className='news-image'>
-                  <img className='news-img' height={250} width={250} src={info.urlToImage} alt='' />
+                  <img className='news-img' height={250} width={250} src={info.imageUrl} alt='' />
                 </div>
                 <div className='news-content'>
                   <div className='headline'>{info.title}</div>
                   <div className='news-story'>
-                    {info.description}
-                    <br />
                     {info.content}
+                    <br />
+                    {/* {info.description} */}
                     <a href={info.readMoreUrl} target='_blank' rel='noopener noreferrer'>
                       Readmore<FaArrowRight />
                     </a>
                   </div>
                   <div className='post-details'>
                     <div className='posted-by'>Post By: {info.author}</div>
-                    <div className='date-time'>Posted on: {info.publishedAt}</div>
+                    <div className='date-time'>Posted on: {info.date} {info.time}</div>
                   </div>
                 </div>
               </div>
