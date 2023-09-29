@@ -27,7 +27,7 @@ const News = () => {
     //     setError('Failed to fetch news data. Please try again later.');
     //   });
    try{
-        const response = await axios.get('http://360newstest.vercel.app/all')
+        const response = await axios.get('https://360newstest.vercel.app/all')
         
         if(response){
             // console.log("Local Api Feteched"+response.data)
