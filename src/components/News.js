@@ -18,7 +18,7 @@ const News = () => {
         if(response){
             // console.log("Local Api Feteched"+response.data)
             const news=(response)    
-            // console.log(news.data.articles)
+            console.log(news.data.articles)
             setNdata(news.data.articles)
         }
    }
