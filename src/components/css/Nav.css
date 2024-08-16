@@ -1,0 +1,96 @@
+.logo-name{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* Nav.css */
+
+.nav {
+    position: sticky;
+    top: 0;
+    background-color: #2b2f31;
+    padding: 5px;
+    flex-direction: column;
+    color: #EEEEEE;
+}
+
+.logo-name {
+    text-align: center;
+}
+
+.logo-img {
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.logo-name h1 {
+    font-size: 3.5rem;
+    margin: 10px 0;
+}
+.news-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-name a {
+    text-decoration: none;
+    background-color:#176B87;
+    color: #EEEEEE;
+    font-weight: bold;
+    margin: 5px;
+    display: block;
+    font-size: small;
+    border-radius: 50px;
+    padding: 15px;
+}
+
+.logo-name a:hover {
+    color: #2b2d2e;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        height: 80px;
+        width: 50px;
+    }
+
+    .logo-name h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo-name a {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+    .news-btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 60px;
+        width: 40px;
+    }
+
+    .logo-name h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo-name a {
+        font-size: 0.5rem;
+        padding: 0.3rem;
+    }
+    .news-btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
