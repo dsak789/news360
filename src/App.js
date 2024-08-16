@@ -8,9 +8,9 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route exact path='/' element={<News/>} />
-          <Route exact path='/NewsAppOldVersion' element={<NewsAPI/>} />
-          <Route exact path='/*' element={<News/>} />
+          <Route exact path='/' element={<NewsAPI/>} />
+          <Route exact path='/NewsAppOldVersion' element={<News/>} />
+          <Route exact path='/*' element={<NewsAPI/>} />
         </Routes>
       </BrowserRouter>
     </div>
