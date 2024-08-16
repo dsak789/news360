@@ -13,7 +13,7 @@ const News = () => {
     const api ='https://newsapi.org/v2/everything?q=tesla&apiKey=194bc3ea605b48bf96cc64cab7eec7cb'
     
    try{
-        const response = await axios.get(api)
+        const response = await axios.get(api,{ headers: { 'Upgrade': 'h2c' } })
         
         if(response){
             // console.log("Local Api Feteched"+response.data)
